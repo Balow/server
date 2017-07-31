@@ -6,6 +6,7 @@ import (
 	"github.com/gorilla/mux"
 )
 
+// Route : todo
 type Route struct {
 	Name        string
 	Method      string
@@ -13,8 +14,10 @@ type Route struct {
 	HandlerFunc http.HandlerFunc
 }
 
+// Routes : todo
 type Routes []Route
 
+// NewRouter : todo
 func NewRouter() *mux.Router {
 
 	router := mux.NewRouter().StrictSlash(true)
@@ -41,5 +44,11 @@ var routes = Routes{
 		"GET",
 		"/news/{newsID}",
 		NewsShow,
+	},
+	Route{
+		"NewsCreate",
+		"Post",
+		"/news",
+		NewsCreate,
 	},
 }
